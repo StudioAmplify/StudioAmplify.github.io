@@ -9,6 +9,11 @@ body.loading {
     opacity: 0;
 }
 
+img {
+    image-orientation: from-image;
+    -webkit-image-orientation: from-image;
+}
+
 #logo {
 	height: 4em;
 	display: block;
