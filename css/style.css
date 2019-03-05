@@ -1,0 +1,544 @@
+body {
+    /*background: url(/img/bg.png);*/
+    /*background-size: 4pt;*/
+    transition: opacity 500ms;
+    padding-bottom: 200pt;
+}
+
+body.loading {
+    opacity: 0;
+}
+
+#logo {
+	height: 4em;
+	display: block;
+    padding-top: 2em;
+    padding-bottom: 2em;
+}
+
+#navbar {
+    position: fixed;
+    left: 0;
+    background: black;
+    height: 100vh;
+    width: 26%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding-right: 20pt;
+}
+
+.mobile #navbar {
+    display: none;
+}
+
+#me {
+	padding-top: 8em;
+}
+
+#skills {
+    padding-top: 10em;
+}
+
+
+nav {
+	display: inline-block;
+}
+
+nav a {
+    font-size: 1.2em;
+    text-decoration: none;
+    font-weight: 100;
+    color: white;
+    display: block;
+    padding: 0.2em 0;
+    text-align: right;
+}
+
+nav a.selected {
+	font-weight: 600;
+    color: #f23670;
+}
+
+.mobile nav a {
+    margin-right: 8pt;
+    display: inline-block;
+}
+
+.mobile #me {
+    padding-top: 60pt;
+}
+
+.mobile #logo {
+    height: 5em;
+}
+
+#mobileNavbar {
+    position: fixed;
+    background: black;
+    z-index: 1000;
+    transition: all 300ms ease-in-out;
+    height: 40pt;
+    display: none;
+    /*transform: translateY(-35pt);*/
+    left: 0;
+    padding: 0 5%;
+    box-shadow: 0px 0px 5px rgba(0,0,0,0.1);
+    opacity: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.desktop #mobileNavbar {
+    display: none;
+}
+
+#mobileNavbar #logo {
+    height: 2.5em;
+}
+/*
+.mobile.scrolled #mobileNavbar {
+    transform: translateY(0);
+    opacity: 1;
+}
+*/
+.scroller {
+    display: flex;
+    flex-wrap: nowrap;
+    /*overflow-x: auto;*/
+}
+
+.scroller .scrollerPage {
+    flex: 0 0 auto;
+    width: 20em;
+    margin-right: 3em;
+}
+
+.appIcon {
+    width: 3em;
+    height: 3em;
+    background: rgb(240,240,240);
+    border-radius: 0.75em;
+    margin-right: 0.75em;
+    background-size: cover;
+    background-position: center;
+}
+
+.projectHeader {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5em;
+}
+
+.projectHeader h5 {
+    margin: 0;
+    line-height: 10pt;
+}
+
+.projectHeader a {
+    font-size: 9pt;
+    text-decoration: none;
+}
+
+.screenShot {
+    background: #ececec;
+    height: 350pt;
+    width: 200pt;
+    border-radius: 10pt;
+}
+
+.screenShot img {
+    border-radius: 10pt;
+    width: 100%;
+}
+
+ul {
+    padding-left: 1.2em;
+}
+
+li {
+    text-indent: -1.2em;
+    margin-bottom: 0.5em;
+}
+
+.photo {
+    width: 200pt;
+    height: 200pt;
+    position: absolute;
+}
+
+.photo img {
+    width: 100%;
+    height: 100%;
+    border-radius: 100%; 
+}
+
+#photos {
+    padding-top: 30pt;
+    padding-bottom: 100pt;
+}
+
+#links {
+    /*position: relative;*/
+    /*top: 25pt;*/
+    /*text-align: right;*/
+    /*margin-left: -190pt;*/
+    /*padding-right: 180pt;*/
+}
+
+#links a {
+    font-size: 2rem;
+    color: white;
+    padding: 5pt;
+    display: block;
+    text-align: center;
+    margin: 10pt 0;
+    text-decoration: none;
+}
+
+
+#links a:hover {
+    opacity: 0.7;
+}
+
+.desktop #links a {
+    display: table;
+    padding: 6pt 11pt;
+}
+
+#contact {
+    /*padding-bottom: 50pt;*/
+}
+
+#contactMe {
+    font-size: 3rem;
+    font-weight: 800;
+    /*margin-left: -100pt;*/
+}
+
+.desktop #contactMe  {
+    font-size: 3rem;
+}
+
+.projectTabs {
+    margin-bottom: 1em;
+}
+
+.projectTabs span {
+    margin-right: 1em;
+    cursor: pointer;
+    opacity: 0.9;
+}
+
+.projectTabs span:hover {
+    opacity: 0.6;
+}
+
+.projectTabs span.selected {
+    font-weight: 600;
+    text-decoration: underline;
+    opacity: 1;
+    letter-spacing: -0.3px;
+}
+
+.projectScreensContainer {
+    overflow: hidden;
+}
+
+.projectScreensInner {
+    position: relative;
+    height: 250pt;
+}
+
+.projectScreen {
+    top: 0;
+    position: absolute;
+    opacity: 0;
+    transition: all 300ms;
+    transform: translateX(20pt);
+    pointer-events: none;
+}
+
+.projectScreen.visible {
+    opacity: 1;
+    pointer-events: all;
+    transform: translateX(0);
+}
+
+.project img {
+    width: 100%;
+    display: none;
+}
+
+.mobile .project img {
+    width: 100%;
+    display: block;
+}
+
+#graphics {
+    position: fixed;
+    right: 3%;
+    top: 0;
+    width: 30%;
+}
+
+.mobile #graphics {
+    display: none;
+}
+
+.screenshot {
+    width: 400pt;
+    height: 200pt;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    opacity: 0;
+    transition: all 500ms ease-in-out;
+}
+
+h6 {
+    margin-bottom: 0.75em !important;
+    font-size: 1.25em;
+    line-height: 1.5;
+}
+
+.collapsableList {
+    overflow: hidden;
+    position: relative;
+    transition: max-height 500ms ease-in-out;
+}
+
+.mobile .collapsableList {
+    max-height: 80pt;
+}
+
+.collapsableList.visible {
+    max-height: 1000pt;
+}
+
+.collapsableList .listShadow {
+    background: linear-gradient(180deg, #ffffff00, white);
+    bottom: 0;
+    position: absolute;
+    width: 100%;
+    height: 30pt;
+}
+
+.expandButton {
+    margin-bottom: 2em;
+    display: none;
+    text-decoration: underline;
+    color: #f23670;
+    cursor: pointer;
+}
+
+.mobile .expandButton {
+    display: block;
+}
+
+.expandButton:hover {
+    opacity: 0.6;
+}
+
+.block {
+    mix-blend-mode: overlay;
+    position: absolute;
+    /*transition: all 500ms ease-in-out;*/
+}
+
+.screenShotContainer {
+    max-height: 70vh;
+    overflow: hidden;
+}
+
+.mobile .navbuffer {
+    display: none;
+}
+
+#master_accolades {
+    margin-top: 100pt;
+    position: absolute;
+}
+
+.desktop #mobile_accolades {
+    display: none;
+}
+
+#mobile_accolades {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-top: 10pt;
+}
+
+.accolade {
+    width: 330px;
+    padding: 15pt 0 15pt;
+    border-bottom: 1px solid #e9e9e9;
+}
+
+.mobile .accolade {
+    display: inline-block;
+    width: 37vw;
+    margin: 5pt 0px;
+}
+
+.accolade p {
+    font-size: 12px;
+    margin: 0;
+}
+
+#keyText {
+    padding-top: 15pt;
+}
+
+#block1 {
+    background: linear-gradient(180deg, #37e3cb9c, #006dffbf);
+    height: 400pt;
+    width: 200pt;
+    top: 90pt;
+    left: 30pt;
+    opacity: 0;
+}
+
+#block2 {
+    background: linear-gradient(180deg, #eb686dc4, #7000ffab);
+    height: 300pt;
+    width: 40pt;
+    top: 50pt;
+    left: 70pt;
+    opacity: 0;
+}
+
+#block3 {
+    background: linear-gradient(0deg, #df37e366, #ddb373de);
+    height: 100pt;
+    width: 100pt;
+    top: 110pt;
+    left: 178pt;
+    border-radius: 20pt;
+    z-index: 100;
+    opacity: 0;
+}
+
+#block4 {
+    background: linear-gradient(0deg, #e50603c7, #e7dd33a8);
+    height: 170pt;
+    width: 170pt;
+    top: 260pt;
+    left: 90pt;
+    border-radius: 85pt;
+    z-index: 100;
+    opacity: 0;
+}
+
+#block5 {
+    background: linear-gradient(0deg, #e50603c7, #e7dd33a8);
+    height: 80pt;
+    width: 80pt;
+    top: 450pt;
+    left: 140pt;
+    border-radius: 40pt;
+    z-index: 100;
+    opacity: 0;
+}
+
+#krft1 {
+    background: url(/img/krft-screen2.jpg);
+    height: 300pt;
+    width: 340pt;
+    position: absolute;
+    left: 20pt;
+    background-size: cover;
+    top: 60pt;
+    z-index: 200;
+    opacity: 0;
+}
+
+#chillscape1 {
+    background: url(/img/chillscape-screen1.png);
+    height: 440pt;
+    width: 220pt;
+    position: absolute;
+    left: 0;
+    background-size: contain;
+    margin-top: 20pt;
+    z-index: 200;
+    background-repeat: no-repeat;
+    opacity: 0;
+}
+
+#noiz1 {
+    background: url(/img/noiz-screen1.png);
+    height: 440pt;
+    width: 210pt;
+    position: absolute;
+    left: 0pt;
+    background-size: contain;
+    margin-top: 30pt;
+    z-index: 200;
+    background-repeat: no-repeat;
+    opacity: 0;
+}
+
+#noiz2 {
+    background: url(/img/noiz-screen2.png);
+    height: 380pt;
+    width: 180pt;
+    position: absolute;
+    left: 200pt;
+    background-size: contain;
+    margin-top: 50pt;
+    z-index: 100;
+    background-repeat: no-repeat;
+    opacity: 0;
+}
+
+#freq1 {
+    background: url(/img/freq-graphic.png);
+    height: 210pt;
+    width: 210pt;
+    position: absolute;
+    left: 0pt;
+    background-size: contain;
+    margin-top: 80pt;
+    z-index: 200;
+    background-repeat: no-repeat;
+    opacity: 0;
+}
+
+#freq2 {
+    background: url(/img/freq-screenshot1.png);
+    height: 320pt;
+    width: 200pt;
+    position: absolute;
+    left: 150pt;
+    background-size: contain;
+    margin-top: 0pt;
+    z-index: 100;
+    background-repeat: no-repeat;
+    opacity: 0;
+}
+
+#junglator1 {
+    background: url(/img/junglator-screenshot1.png);
+    height: 400pt;
+    width: 250pt;
+    position: absolute;
+    left: 30pt;
+    background-size: contain;
+    margin-top: 20pt;
+    z-index: 100;
+    background-repeat: no-repeat;
+    opacity: 0;
+}
+
+.mobile #jonah {
+    right: 0;
+}
+
+.mobile .photo {
+    width: 50vw;
+    height: 50vw;
+}
